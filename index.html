@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Onboarding Portal - EduGate</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="indexstyle1.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <img src="C:\Users\DELL\Desktop\pject\4bea1c75-d11c-450a-aa8d-1c27c3d37bfe.jpg" alt="EduGate Logo">
+                <span>EduGate</span>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Pathways ▼</a>
+                        <div class="dropdown-content">
+                            <a href="10th.html">Class 10</a>
+                            <a href="12th.html">Post 12th</a>
+                            <a href="postgrad.html">Post Graduation</a>
+                        </div>
+                        
+                        <li><a href="carrer.html" class="nav-link">Careers</a></li>
+                        
+                    </li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <button class="btn secondary">Sign Up</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Onboarding Hero Section -->
+    <section class="onboarding-hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Your Learning Journey Starts Here</h1>
+                <p class="hero-subtitle">Personalized onboarding for Class 10, Post-12th, and Graduate students</p>
+                <div class="pathway-selector">
+                    <a href="10th.html">
+                        <button class="pathway-card" data-path="Class 10">
+                        <img src="C:\Users\DELL\Desktop\pject\f3aa232b-c5c3-463f-b9b3-720334be4512.jpg" alt="Class 10">
+                    </a>
+                        <span>Class 10 Student</span>
+                    </button>
+                    <a href="12th.html">
+                    <button class="pathway-card" data-path="post12">
+                        <img src="C:\Users\DELL\Desktop\pject\d824b43e-6313-427e-9001-bc72207ac8db.jpg" alt="Post 12th">
+                    </a>
+                        <span>Post 12th Student</span>
+                    </button>
+                    <a href="postgrad.html">
+                    <button class="pathway-card" data-path="postgrad">
+                        <img src="C:\Users\DELL\Desktop\pject\97bd16f5-6613-4311-bb85-99ec9df0d50c.jpg" alt="Post Graduate">
+                    </a>
+                        <span>Graduate Student</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="C:\Users\DELL\Desktop\pject\c5622baa-ca6e-41f6-975c-0df62c5726f9.jpg" alt="Onboarding Hero">
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Welcome Back!</h2>
+                <p>Access your personalized dashboard</p>
+            </div>
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="student-id">Student ID/Email</label>
+                    <input type="text" id="student-id" name="student-id" required placeholder="Enter your ID or email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="password" name="password" required placeholder="••••••••">
+                        <button type="button" class="toggle-password">
+                    
+                        </button>
+                    </div>
+                </div>
+                <div class="form-options">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn primary">Sign In</button>
+            </form>
+            <div class="auth-divider">
+                <span>or continue with</span>
+            </div>
+            <div class="social-auth">
+                <button class="social-btn google">
+                    <img src="C:\Users\DELL\Desktop\pject\857a2cce-5034-4c33-9bd8-59d371513773.jpg" alt="Google">
+                    Google
+                </button>
+                <button class="social-btn microsoft">
+                    <img src="C:\Users\DELL\Desktop\pject\c18fcabe-541d-4fa8-8bc1-e30e22817685.jpg" alt="Microsoft">
+                    Microsoft
+                </button>
+            </div>
+            <p class="auth-footer">New to EduGate? <a href="#" class="signup-link">Create account</a></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About EduGate</h3>
+                <p>Comprehensive onboarding platform for students at all academic stages.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Academic Resources</a></li>
+                    <li><a href="#">Career Guidance</a></li>
+                    <li><a href="#">Mentorship Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p>support@edugate.in</p>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 EduGate. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Career Pathways - EduGate</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --engineering: #3B82F6;
+            --medical: #EF4444;
+            --commerce: #10B981;
+            --text-dark: #1e293b;
+            --text-light: #64748b;
+            --background: #f8fafc;
+            --border: #e2e8f0;
+            --radius: 0.75rem;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--background);
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--engineering);
+        }
+
+        /* Main Content */
+        .main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .pathway-section {
+            margin: 4rem 0;
+            scroll-margin-top: 100px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .stream-grid {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stream-card {
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            border-top: 4px solid;
+        }
+
+        .engineering-card { border-color: var(--engineering); }
+        .medical-card { border-color: var(--medical); }
+        .commerce-card { border-color: var(--commerce); }
+
+        .specialization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .spec-card {
+            padding: 1.5rem;
+            background: var(--background);
+            border-left: 4px solid var(--engineering);
+            border-radius: var(--radius);
+        }
+
+        /* Exams Table */
+        .exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 3rem 0;
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .exam-table th,
+        .exam-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .exam-table th {
+            background: var(--engineering);
+            color: white;
+        }
+
+        /* Accordion */
+        .accordion {
+            border: 2px solid var(--border);
+            border-radius: var(--radius);
+            margin: 1rem 0;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            background: var(--background);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion.active .accordion-content {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: white;
+            margin-top: 4rem;
+            padding: 4rem 0 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav { flex-direction: column; gap: 1rem; }
+            .nav-links { flex-direction: column; align-items: center; }
+            .footer-content { grid-template-columns: 1fr; }
+            .stream-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">
+                <img src="C:\Users\DELL\Desktop\pject\4bea1c75-d11c-450a-aa8d-1c27c3d37bfe.jpg" alt="EduGate" width="40">
+                EduGate
+            </div>
+            <ul class="nav-links">
+                <li><a href="#engineering" class="nav-link">Engineering</a></li>
+                <li><a href="#medical" class="nav-link">Medical</a></li>
+                <li><a href="#commerce" class="nav-link">Commerce</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Engineering Section -->
+        <section id="engineering" class="pathway-section">
+            <h1>Engineering Career Pathways</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>90% Placement</h3>
+                    <p>Top Engineering Colleges</p>
+                </div>
+                <div class="stat-card">
+                    <h3>₹8-25L</h3>
+                    <p>Average Salary Package</p>
+                </div>
+            </div>
+
+            <div class="stream-grid">
+                <div class="stream-card engineering-card">
+                    <h2><i class="fas fa-cogs"></i> Core Engineering</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3>Mechanical Engineering</h3>
+                            <ul>
+                                <li>Design Engineer: ₹6-12L</li>
+                                <li>Automotive Engineer: ₹8-18L</li>
+                                <li>HVAC Specialist: ₹7-15L</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h3>Civil Engineering</h3>
+                            <ul>
+                                <li>Structural Engineer: ₹5-10L</li>
+                                <li>Project Manager: ₹10-25L</li>
+                                <li>Urban Planner: ₹8-20L</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stream-card engineering-card">
+                    <h2><i class="fas fa-laptop-code"></i> Computer Science</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3>Software Development</h3>
+                            <ul>
+                                <li>Full Stack Developer: ₹10-30L</li>
+                                <li>Data Scientist: ₹12-40L</li>
+                                <li>Cybersecurity Expert: ₹15-35L</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h3>Emerging Tech</h3>
+                            <ul>
+                                <li>AI/ML Engineer: ₹15-50L</li>
+                                <li>Blockchain Developer: ₹18-45L</li>
+                                <li>IoT Specialist: ₹12-30L</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Medical Section -->
+        <section id="medical" class="pathway-section">
+            <h1>Medical Career Pathways</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>15% Growth</h3>
+                    <p>Healthcare Industry</p>
+                </div>
+                <div class="stat-card">
+                    <h3>₹12-1Cr+</h3>
+                    <p>Specialist Earnings</p>
+                </div>
+            </div>
+
+            <div class="stream-grid">
+                <div class="stream-card medical-card">
+                    <h2><i class="fas fa-user-md"></i> Clinical Practice</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3>General Medicine</h3>
+                            <ul>
+                                <li>Physician: ₹12-25L</li>
+                                <li>Surgeon: ₹18-50L</li>
+                                <li>Pediatrician: ₹15-35L</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h3>Super Specialties</h3>
+                            <ul>
+                                <li>Cardiologist: ₹25-80L</li>
+                                <li>Neurosurgeon: ₹30-1Cr+</li>
+                                <li>Oncologist: ₹20-60L</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stream-card medical-card">
+                    <h2><i class="fas fa-microscope"></i> Medical Research</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3>Clinical Research</h3>
+                            <ul>
+                                <li>Research Scientist: ₹10-25L</li>
+                                <li>Pharma Researcher: ₹12-30L</li>
+                                <li>Epidemiologist: ₹15-35L</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h3>Public Health</h3>
+                            <ul>
+                                <li>Health Administrator: ₹8-18L</li>
+                                <li>WHO Consultant: $60-120k</li>
+                                <li>Policy Maker: ₹10-25L</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commerce Section -->
+        <section id="commerce" class="pathway-section">
+            <h1>Commerce Career Pathways</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>200% Growth</h3>
+                    <p>Financial Sector Jobs</p>
+                </div>
+                <div class="stat-card">
+                    <h3>₹15-40L</h3>
+                    <p>Top MBA Packages</p>
+                </div>
+            </div>
+
+            <div class="stream-grid">
+                <div class="stream-card commerce-card">
+                    <h2><i class="fas fa-file-invoice-dollar"></i> Professional Certifications</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3>Chartered Accountancy</h3>
+                            <ul>
+                                <li>Audit Manager: ₹12-25L</li>
+                                <li>Tax Consultant: ₹8-18L</li>
+                                <li>Financial Controller: ₹15-30L</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h3>Company Secretary</h3>
+                            <ul>
+                                <li>Corporate Governance: ₹10-20L</li>
+                                <li>Legal Compliance: ₹9-15L</li>
+                                <li>IPO Specialist: ₹12-25L</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stream-card commerce-card">
+                    <h2><i class="fas fa-globe"></i> Global Opportunities</h2>
+                    <div class="specialization-grid">
+                        <div class="spec-card">
+                            <h3>International Finance</h3>
+                            <ul>
+                                <li>CFA Charterholder: $100-250k</li>
+                                <li>Investment Banker: $150-500k</li>
+                                <li>Financial Analyst: $80-180k</li>
+                            </ul>
+                        </div>
+                        <div class="spec-card">
+                            <h3>Management Education</h3>
+                            <ul>
+                                <li>MBA Abroad: $100-200k</li>
+                                <li>Digital Marketing Head: ₹15-30L</li>
+                                <li>Business Consultant: ₹18-40L</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Entrance Exams -->
+        <section class="exam-section">
+            <h2>Key Entrance Exams</h2>
+            <table class="exam-table">
+                <thead>
+                    <tr>
+                        <th>Exam</th>
+                        <th>Stream</th>
+                        <th>Purpose</th>
+                        <th>Website</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>JEE Advanced</td>
+                        <td>Engineering</td>
+                        <td>IIT Admissions</td>
+                        <td><a href="https://jeeadv.ac.in" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>NEET-UG</td>
+                        <td>Medical</td>
+                        <td>MBBS Admissions</td>
+                        <td><a href="https://neet.nta.nic.in" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>CAT</td>
+                        <td>Commerce</td>
+                        <td>MBA Admissions</td>
+                        <td><a href="https://iimcat.ac.in" target="_blank">Visit</a></td>
+                    </tr>
+                    <tr>
+                        <td>CA Foundation</td>
+                        <td>Commerce</td>
+                        <td>Chartered Accountancy</td>
+                        <td><a href="https://www.icai.org" target="_blank">Visit</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- FAQs -->
+        <section class="faq-section">
+            <h2>Career Guidance</h2>
+            
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3>Engineering vs MBA: Which is better?</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>Engineering:</strong> Technical roles, product development<br>
+                    <strong>MBA:</strong> Management roles, leadership positions<br>
+                    <em>Top Recruiters:</em> Google vs McKinsey</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3>MBBS vs Specialization</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>MBBS:</strong> 5.5 years (General Practice)<br>
+                    <strong>MD/MS:</strong> +3 years (Specialization)<br>
+                    <strong>DM/MCh:</strong> +3 years (Super Specialization)</p>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-header">
+                    <h3>CA vs MBA Finance</h3>
+                    <span class="toggle">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>CA:</strong> Core accounting (5-6 years)<br>
+                    <strong>MBA:</strong> Broad management (2 years)<br>
+                    <em>Starting Salary:</em> CA ₹8-15L vs MBA ₹15-25L</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3>EduGate</h3>
+                <p>Comprehensive Career Guidance</p>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: contact@edugate.in</p>
+                <p>Phone: +91 9876543210</p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <p>LinkedIn | Twitter | Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 EduGate. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script>
+    // Accordion Functionality
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const accordion = header.parentElement;
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.toggle');
+            
+            accordion.classList.toggle('active');
+            content.style.maxHeight = accordion.classList.contains('active') 
+                ? content.scrollHeight + 'px'
+                : 0;
+            toggle.textContent = accordion.classList.contains('active') 
+                ? '▲' 
+                : '▼';
+        });
+    });
+</script>
